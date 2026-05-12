@@ -7,7 +7,7 @@ import DocumentDetail from './components/DocumentDetail';
 import AuthPage from './components/AuthPage';
 
 const API_BASE = import.meta.env.PROD
-  ? "https://doc-ai-8z7a.onrender.com"
+  ? "https://nsdocument.onrender.com"
   : "http://localhost:8000";
 
 // ─── Theme Toggle Button ──────────────────────────────────────
