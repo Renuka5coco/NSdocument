@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+groq
+PyMuPDF
+python-docx
+motor[srv]
+certifi
+python-dotenv

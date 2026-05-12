@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* =====================
+   THEME VARIABLES
+   ===================== */
+:root,
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --surface: #171717;
+  --surface-hover: #1f1f1f;
+  --border: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --glass-bg: rgba(23, 23, 23, 0.6);
+  --glass-border: rgba(255,255,255,0.08);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --input-bg: #171717;
+  --badge-bg: rgba(59,130,246,0.12);
+  --blob-opacity: 0.18;
+}
+
+[data-theme="light"] {
+  --bg: #f0f4ff;
+  --surface: #ffffff;
+  --surface-hover: #f8faff;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(255,255,255,0.75);
+  --glass-border: rgba(59,130,246,0.15);
+  --card-shadow: 0 4px 24px rgba(59,130,246,0.08);
+  --input-bg: #f8faff;
+  --badge-bg: rgba(59,130,246,0.08);
+  --blob-opacity: 0.12;
+}
+
+/* =====================
+   BASE STYLES
+   ===================== */
+@theme {
+  --color-background: #0a0a0a;
+  --color-surface: #171717;
+  --color-border: #262626;
+  --color-primary: #3b82f6;
+}
+
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* =====================
+   GLASSMORPHISM CARD
+   ===================== */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+}
+
+/* =====================
+   THEME-AWARE UTILITIES
+   ===================== */
+.theme-bg        { background-color: var(--bg); }
+.theme-surface   { background-color: var(--surface); }
+.theme-border    { border-color: var(--border); }
+.theme-text      { color: var(--text-primary); }
+.theme-muted     { color: var(--text-secondary); }
+.theme-faint     { color: var(--text-muted); }
+
+/* Input fields */
+.theme-input {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.theme-input::placeholder { color: var(--text-muted); }
+.theme-input:focus { border-color: #3b82f6; outline: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
