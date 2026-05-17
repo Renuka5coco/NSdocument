@@ -40,7 +40,7 @@ export default function UploadModal({ onClose, onComplete }) {
       setTimeout(() => setProgressText("Running AI Extraction..."), 1500);
       
       const API_BASE = import.meta.env.PROD 
-      ? "https://doc-ai-8z7a.onrender.com" 
+      ? "https://nsdocument.onrender.com" 
       : "http://localhost:8000"; 
       const token = localStorage.getItem('token');
       const response = await axios.post(`${API_BASE}/api/upload`, formData, {
