@@ -1,5 +1,8 @@
 from dotenv import load_dotenv
-load_dotenv(override=True)
+from pathlib import Path
+
+env_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(env_path, override=True)
 
 import os
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Depends

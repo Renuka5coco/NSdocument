@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FileText, Lock, Mail, User, Eye, EyeOff, Loader2, Sun, Moon } from 'lucide-react';
 
 const API_BASE = import.meta.env.PROD
-  ? "https://doc-ai-8z7a.onrender.com"
+  ? "https://nsdocument.onrender.com"
   : "http://localhost:8000";
 
 export default function AuthPage({ onAuth, isDark, onToggleTheme }) {

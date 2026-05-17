@@ -1,11 +1,19 @@
 import os
 import json
+from pathlib import Path
+from dotenv import load_dotenv
 from groq import Groq
 from pydantic import BaseModel
 from typing import Optional
 
+env_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(env_path, override=True)
+
 # Initialize Groq Client
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+api_key = os.environ.get("GROQ_API_KEY")
+if not api_key:
+    raise EnvironmentError("GROQ_API_KEY environment variable is required for AI extraction.")
+client = Groq(api_key=api_key)
 
 def extract_data(processed_file: dict, doc_type_hint: str) -> dict:
     """
